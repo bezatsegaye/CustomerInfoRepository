@@ -1,0 +1,46 @@
+<!doctype html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>List Of Company Information</title>
+  </head>
+  <body>
+    <div class="container my-1">
+        <h3> Job Record</h3>
+        <p><a th:href="@{/home}">Back</a> </p>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Country</th>
+      <th scope="col">City</th>
+      <th scope="col">Edit|Delete</th>
+    </tr>
+  </thead>
+  <tbody th:each = "company:${ViewCompany}">
+    <tr>
+      <th scope="row">1</th>
+      <td th:text = "${company.name}">Mark</td>
+      <td th:text = "${company.city}">Otto</td>
+      <td th:text = "${company.country}">@mdo</td>
+       <th scope="col"> <a th:href="@{/home/update/{id}(id=${company.id})}"> Edit </a> | <a th:href="@{/home/delete/{id}(id=${company.id})}"> Delete </a> </th>
+    </tr>
+  </tbody>
+</table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

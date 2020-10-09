@@ -1,0 +1,48 @@
+<!doctype html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container my-1">
+        <h3> Job Record</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/home/add}" th:object="${newCompany}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Company Name</label> 
+                                <input type="text"  class="form-control" id="name" placeholder="Name" th:field="*{name}"/> 
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="country" class="col-form-label">country</label> 
+                                <input type="text"  class="form-control" id="country" placeholder="Country" th:field="*{country}" /> 
+                            </div>
+
+                             <div class="form-group col-md-8">
+                                <label for="city" class="col-form-label">city</label> 
+                                <input type="text"  class="form-control" id="city" placeholder="City" th:field="*{city}" /> 
+                            </div>
+                       
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value="Add Record">
+                            </div>
+
+                            <div class="form-group col-md-8"></div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

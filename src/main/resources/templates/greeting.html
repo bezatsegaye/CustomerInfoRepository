@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> Employee Record</h1>
+<h2> List of Records</h2>
+
+<p><a href = "/home/list"> Home </a></p>
+<div th:object = "${com}">
+<p th:text="*{id}"> ID 01 </p>
+<p th:text="*{city}"> City </p>
+<p th:text="*{country}"> Country </p>
+</div>
+</body>
+</html>
+
